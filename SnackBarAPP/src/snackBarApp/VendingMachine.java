@@ -1,21 +1,17 @@
 package snackBarApp;
 
 public class VendingMachine {
+    private static int maxId = 0;
     private int id;
     private String name;
 
-    public VendingMachine(int id, String name) {
-        maxId++;
-        id = maxId;
+    public VendingMachine(String name) {
+        id = ++maxId;
         this.name = name;
     }
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -25,4 +21,12 @@ public class VendingMachine {
     public void getName(String name) {
         this.name = name;
     }
+
+    @Override
+    public String toString() {
+        String rtnSting = "Vending Machine's id:" + id + "\n" + "Vending Machine's " + name + '\n';
+
+        return rtnSting;
+    }
+
 }
