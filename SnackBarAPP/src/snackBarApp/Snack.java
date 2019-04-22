@@ -1,6 +1,7 @@
 package snackBarApp;
 
 public class Snack {
+    private static int maxId = 0;
     private int id;
     private String name;
     private double quantity;
@@ -8,22 +9,13 @@ public class Snack {
     private int vendingID;
 
     public Snack(int id, String name, double quantity, int cost, int vendingID) {
-        maxId++;
-        id = maxId;
 
-        this.id = id;
+        id = ++maxId;
+
         this.name = name;
         this.quantity = quantity;
         this.cost = cost;
         this.vendingID = vendingID;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -52,5 +44,14 @@ public class Snack {
 
     public double getQuantity() {
         return quantity;
+    }
+
+    @Override
+    public String toString() {
+        String rtnString = "Snacks id " + id + "\n" + "Snack's name: " + name + "\n" + "Snack's quantity: " + quantity
+                + "\n" + "Snack's cost: " + cost + "\n";
+
+        return rtnString;
+
     }
 }
