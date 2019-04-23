@@ -4,46 +4,43 @@ public class Snack {
     private static int maxId = 0;
     private int id;
     private String name;
-    private double quantity;
-    private int cost;
-    private int vendingID;
+    private int quantity;
+    private double cost;
+    private int vendingMachineId;
 
-    public Snack(int id, String name, double quantity, int cost, int vendingID) {
+    public Snack(String name, int quantity, double cost, int vendingMachineId) {
 
         id = ++maxId;
 
         this.name = name;
         this.quantity = quantity;
         this.cost = cost;
-        this.vendingID = vendingID;
-    }
-
-    public String getName() {
-        return name;
+        this.vendingMachineId = vendingMachineId;
     }
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public int getvendingID() {
-        return vendingID;
-    }
-
-    public void setVendingID(int vendingID) {
-        this.vendingID = vendingID;
-    }
-
-    public int getCost() {
-        return cost;
-    }
-
-    public void setCost(int cost) {
-        this.cost = cost;
-    }
-
-    public double getQuantity() {
+    public int getQuantity() {
         return quantity;
+    }
+
+    public void addQuantity() {
+        this.quantity += quantity;
+    }
+
+    public double sellSnack(int quantity) {
+        this.quantity -= quantity;
+        return quantity * cost;
+    }
+
+    public int getvendingMachineId() {
+        return vendingMachineId;
+    }
+
+    public void setvendingMachineId(int vendingMachineId) {
+        this.vendingMachineId = vendingMachineId;
     }
 
     @Override

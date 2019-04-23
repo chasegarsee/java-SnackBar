@@ -13,12 +13,26 @@ public class Main {
         VendingMachine office = new VendingMachine("Office");
 
         // New Snacks
-        Snack chips = new Snack(id, "Chips", 36, 1.00, food.getId());
-        Snack chocolateBar = new Snack(id, "Chocolate Bar", 36, 1.00, food.getId());
-        Snack pretzel = new Snack(id, "Pretzel", 30, 2.00, food.getId());
+        Snack chips = new Snack("Chips", 36, 1.00, food.getId());
+        Snack chocolateBar = new Snack("Chocolate Bar", 36, 1.00, food.getId());
+        Snack pretzel = new Snack("Pretzel", 30, 2.00, food.getId());
 
-        Snack soda = new Snack(id, "Soda", 24, 2.50, drink.getId());
-        Snack water = new Snack(id, "Water", 36, 1.00, drink.getId());
+        Snack soda = new Snack("Soda", 24, 2.50, drink.getId());
+        Snack water = new Snack("Water", 36, 1.00, drink.getId());
+
+        System.out.println("**Jane Buys 3 sodas**");
+        jane.buySnack(soda.sellSnack(3));
+
+        System.out.println("**Jane Buys 1 Pretz**");
+        jane.buySnack(pretzel.sellSnack(1));
+
+        System.out.println("**Bob Buys 2 sodas**");
+        bob.buySnack(soda.sellSnack(2));
+    }
+
+    public static void main(String[] args) {
+        workWithData();
+
     }
 
 }
